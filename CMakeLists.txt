@@ -9,6 +9,10 @@ add_executable(${PROJECT_NAME}
 	src/core/Application/Application.cpp
 	src/core/Application/Application.hpp
 	src/core/Generator/Generator.cpp
-	src/core/Generator/Generator.hpp)
+	src/core/Generator/Generator.hpp
+	src/core/LinearCongruentialGenerator/LinearCongruentialGenerator.hpp
+	src/core/LinearCongruentialGenerator/LinearCongruentialGenerator.cpp
+	src/core/LinearFeedbackShiftRegister/LinearFeedbackShiftRegister.hpp
+	src/core/LinearFeedbackShiftRegister/LinearFeedbackShiftRegister.cpp)
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
