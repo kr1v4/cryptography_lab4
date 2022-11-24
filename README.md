@@ -4,7 +4,7 @@
 ## Building
 - Download [CMake](https://cmake.org/download/) version ***3.25.0*** ***required***
 - Do this in your terminal
-	- ```git clone https://github.com/kr1v4/cryptography_lab4.git``` or download Latest version in Releases page
+	- ```git clone https://github.com/kr1v4/cryptography_lab4.git``` or download Latest version in [Releases](https://github.com/kr1v4/cryptography_lab4/releases) page
 	- ```cd cryptography_lab4``` 
 	- ```mkdir build && cd build``` 
 	- ```cmake ..```
