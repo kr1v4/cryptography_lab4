@@ -3,7 +3,7 @@
 #include <iostream>
 
 namespace kGen {
-
+	
 	class Generator {
 
 		public:

@@ -1,9 +1,13 @@
 #include "Application.hpp"
 #include "../Generator/Generator.hpp"
+#include "../LinearCongruentialGenerator/LinearCongruentialGenerator.hpp"
 
 void Application::start()
 {
     show_me();
+    auto& my_lcg = kGen::Linear_Congruential_Generator::get_instanse();
+
+    bool result = my_lcg.set_module(65536);
     auto& my_gen = kGen::Generator::get_instanse();
 }
 
