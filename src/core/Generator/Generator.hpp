@@ -8,11 +8,15 @@
 
 namespace kGen {
 	
+	class Cryptographer;
+
 	class Generator {
 
 		public:
+			friend Cryptographer;
 
-			static Generator& get_instanse();
+		public:
+
 			Linear_Congruential_Generator& get_lcg();
 			Linear_Feedback_Shift_Register& get_lfsr();
 			std::vector<bool> get_gamma(std::string message);
@@ -24,6 +28,9 @@ namespace kGen {
 
 			Generator& operator=(Generator&) = delete;
 			Generator& operator=(Generator&&) = delete;
+
+		private:
+			static Generator& get_instanse();
 
 		private:
 			Linear_Congruential_Generator	&	_lcg	= Linear_Congruential_Generator::get_instanse();

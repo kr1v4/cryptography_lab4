@@ -1,6 +1,8 @@
 #ifndef UTILS_HPP
 #define UTILS_HPP
-
+#include <iostream>
+#include <vector>
+#include <bitset>
 namespace kGen
 {
 	using ullong_t = unsigned long long;
@@ -8,33 +10,20 @@ namespace kGen
 	class Utils
 	{
 		public:
-			/**
-			*  Check if given number is a power of 2
-			*
-			* @param number Number to check
-			* @return return true if given number is power of two, else return false
-			*/
-
+			
 			static bool is_power_of_2(int number);
-
-			/**
-			* Check if given number is prime
-			*
-			* @param number Number to check
-			* @return return true if given number is prime, else return false
-			*/
 
 			static bool is_prime(int number);
 
-			/**
-			* Find greatest common divisor of 2 numbers with Euclidean algorithm
-			*
-			* @param first_number First number to find
-			* @param second_number Second number to find
-			* @return greatest common divisor of 2 numbers
-			*/
-
 			static int gcd(int first_number, int second_number);
+			
+			static void xor_vectors(std::vector<bool>& first_vector, const std::vector<bool>& second);
+
+			static void show_vec_bool(const std::vector<bool>& vector);
+
+			static std::vector<bool> string_to_bits(const std::string& str);
+
+			static std::string bits_to_string(const std::vector<bool> &bits);
 	};
 }
 #endif

@@ -16,7 +16,7 @@ namespace kGen
 
 			std::bitset<17> get_register();
 			std::bitset<16> get_relations();
-			void set_register(std::bitset<17> register);
+			void set_register(std::bitset<17> register_);
 			void set_relations(std::bitset<16> relations);
 
 			std::bitset<128> rand_bin128(std::bitset<17> seed_bin);

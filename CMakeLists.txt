@@ -14,6 +14,8 @@ add_executable(${PROJECT_NAME}
 	src/core/LinearCongruentialGenerator/LinearCongruentialGenerator.cpp
 	src/core/LinearFeedbackShiftRegister/LinearFeedbackShiftRegister.hpp
 	src/core/LinearFeedbackShiftRegister/LinearFeedbackShiftRegister.cpp
+	src/core/Cryptographer/Cryptographer.hpp
+	src/core/Cryptographer/Cryptographer.cpp
 	src/core/Utils/Utils.hpp
 	src/core/Utils/Utils.cpp)
 

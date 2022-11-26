@@ -1,50 +1,25 @@
 #include "Application.hpp"
-#include "../Generator/Generator.hpp"
-#include "../LinearCongruentialGenerator/LinearCongruentialGenerator.hpp"
+#include "../Cryptographer/Cryptographer.hpp"
 
 void Application::start()
 {
     show_me();
-    auto& my_gen = kGen::Generator::get_instanse();
 
-    auto gamma = my_gen.get_gamma("My little test string to get gamma");
+    std::string msg_to_encrypt = "My little test string to get gamma";
 
-    int count = 0;
-    for (auto& bit : gamma)
-    {
-        std::cout << bit;
-        ++count;
-    }
-    std::cout << "\n" << count << "\n";
+    auto& cryptographer = kGen::Cryptographer::get_instanse();
+
+    std::string encrypted_msg = cryptographer.encrypt(msg_to_encrypt);
+
+    std::string decrypted_msg = cryptographer.decrypt(encrypted_msg);
+
+
+
+    std::cout << msg_to_encrypt <<"." <<"\n";
+    std::cout << encrypted_msg << "." << "\n";
+    std::cout << decrypted_msg << "." << "\n";
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void Application::show_me()
 {
