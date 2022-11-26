@@ -3,6 +3,7 @@
 #include "../LinearCongruentialGenerator/LinearCongruentialGenerator.hpp"
 #include "../LinearFeedbackShiftRegister/LinearFeedbackShiftRegister.hpp"
 #include <iostream>
+#include <vector>
 #include <memory>
 
 namespace kGen {
@@ -14,6 +15,7 @@ namespace kGen {
 			static Generator& get_instanse();
 			Linear_Congruential_Generator& get_lcg();
 			Linear_Feedback_Shift_Register& get_lfsr();
+			std::vector<bool> get_gamma(std::string message);
 
 		public:
 
