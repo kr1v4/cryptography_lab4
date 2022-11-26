@@ -10,6 +10,7 @@ namespace kGen
 	class Linear_Congruential_Generator
 	{
 		public:
+
 			friend Generator;
 
 		public:
@@ -21,11 +22,7 @@ namespace kGen
 			bool		set_increment(ullong_t b);
 			bool		set_multiplier(ullong_t a);
 			bool		set_module(int m);
-			std::bitset<32> rand_bin(std::bitset<32> seed_bin);
-
-		private:
-
-			static Linear_Congruential_Generator& get_instanse();
+			std::bitset<16> rand_bin16(std::bitset<16> seed_bin);
 
 		public:
 
@@ -34,6 +31,10 @@ namespace kGen
 
 			Linear_Congruential_Generator& operator=(Linear_Congruential_Generator&) = delete;
 			Linear_Congruential_Generator& operator=(Linear_Congruential_Generator&&) = delete;
+
+		private:
+
+			static Linear_Congruential_Generator& get_instanse();
 
 		private:
 
