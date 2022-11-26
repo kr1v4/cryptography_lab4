@@ -48,6 +48,15 @@ bool kGen::Linear_Congruential_Generator::set_module(int m)
 	return true;
 }
 
+std::bitset<32> kGen::Linear_Congruential_Generator::rand_bin(std::bitset<32> seed_bin)
+{
+	ullong_t seed = seed_bin.to_ullong();
+
+	ullong_t next = (_a * seed + _b) % _m;
+
+	return std::bitset<32>(next);
+}
+
 kGen::Linear_Congruential_Generator& kGen::Linear_Congruential_Generator::get_instanse()
 {
 	static Linear_Congruential_Generator lcg;

@@ -5,11 +5,43 @@
 void Application::start()
 {
     show_me();
-    auto& my_lcg = kGen::Linear_Congruential_Generator::get_instanse();
-
-    bool result = my_lcg.set_module(65536);
     auto& my_gen = kGen::Generator::get_instanse();
+    auto& lcg = my_gen.get_lcg();
+
+
+    std::string bit_val = "11111111111111111111111111111111";
+    std::bitset<32> bset(bit_val);
+
+    std::cout << lcg.rand_bin(bset);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void Application::show_me()
 {

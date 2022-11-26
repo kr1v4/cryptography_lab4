@@ -1,6 +1,8 @@
 #ifndef GENERATOR_HPP
 #define GENERATOR_HPP
+#include "../LinearCongruentialGenerator/LinearCongruentialGenerator.hpp"
 #include <iostream>
+#include <memory>
 
 namespace kGen {
 	
@@ -9,6 +11,7 @@ namespace kGen {
 		public:
 
 			static Generator& get_instanse();
+			Linear_Congruential_Generator& get_lcg();
 
 		public:
 
@@ -19,6 +22,7 @@ namespace kGen {
 			Generator& operator=(Generator&&) = delete;
 
 		private:
+			Linear_Congruential_Generator &_lcg = Linear_Congruential_Generator::get_instanse();
 
 			Generator() = default;
 	};

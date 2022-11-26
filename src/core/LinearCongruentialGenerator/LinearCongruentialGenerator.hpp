@@ -1,12 +1,17 @@
 #ifndef LINEAR_CONGRUENTIAL_GENERATOR_HPP
 #define LINEAR_CONGRUENTIAL_GENERATOR_HPP
-
 #include "../Utils/Utils.hpp"
+#include <bitset>
 
 namespace kGen
 {
+	class Generator;
+
 	class Linear_Congruential_Generator
 	{
+		public:
+			friend Generator;
+
 		public:
 
 			ullong_t	get_increment();
@@ -16,8 +21,9 @@ namespace kGen
 			bool		set_increment(ullong_t b);
 			bool		set_multiplier(ullong_t a);
 			bool		set_module(int m);
+			std::bitset<32> rand_bin(std::bitset<32> seed_bin);
 
-		public:
+		private:
 
 			static Linear_Congruential_Generator& get_instanse();
 
