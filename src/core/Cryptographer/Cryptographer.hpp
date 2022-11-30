@@ -1,5 +1,6 @@
-#ifndef CRYPTOGRAPHER_HPPLinear_Congruential_Generator
+#ifndef CRYPTOGRAPHER_HPP
 #define CRYPTOGRAPHER_HPP
+
 #include "../Generator/Generator.hpp"
 
 namespace kGen
@@ -10,8 +11,8 @@ namespace kGen
 
 			static Cryptographer& get_instanse();
 
-			std::string encrypt(std::string msg);
-			std::string decrypt(std::string encrypted_msg);
+			std::string encrypt(std::string msg, kGen::cr_string file_to_first_lcg_key);
+			std::string decrypt(std::string encrypted_msg, kGen::cr_string file_to_first_lcg_key);
 
 		public:
 

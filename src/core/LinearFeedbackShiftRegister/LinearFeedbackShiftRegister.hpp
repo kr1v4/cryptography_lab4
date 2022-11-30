@@ -1,5 +1,6 @@
 #ifndef LINEAR_FEEDBACK_SHIFT_REGISTER_HPP
 #define LINEAR_FEEDBACK_SHIFT_REGISTER_HPP
+
 #include <bitset>
 
 namespace kGen

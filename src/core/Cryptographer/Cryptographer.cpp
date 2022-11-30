@@ -6,14 +6,14 @@ kGen::Cryptographer& kGen::Cryptographer::get_instanse()
     return cryptographer;
 }
 
-std::string kGen::Cryptographer::encrypt(std::string msg)
+std::string kGen::Cryptographer::encrypt(std::string msg, kGen::cr_string file_to_first_lcg_key)
 {
     while (msg.length() % 16 != 0)
     {
         msg.push_back(' ');
     }
 
-    std::vector<bool> gamma = _generator.get_gamma(msg);
+    std::vector<bool> gamma = _generator.get_gamma(msg, file_to_first_lcg_key);
     std::vector<bool> string_bits = Utils::string_to_bits(msg);
     std::vector<bool> encrypted = gamma;
 
@@ -24,14 +24,14 @@ std::string kGen::Cryptographer::encrypt(std::string msg)
     return encrypted_msg;
 }
 
-std::string kGen::Cryptographer::decrypt(std::string encrypted_msg)
+std::string kGen::Cryptographer::decrypt(std::string encrypted_msg, kGen::cr_string file_to_first_lcg_key)
 {
     while (encrypted_msg.length() % 16 != 0)
     {
         encrypted_msg.push_back(' ');
     }
 
-    std::vector<bool> gamma = _generator.get_gamma(encrypted_msg);
+    std::vector<bool> gamma = _generator.get_gamma(encrypted_msg, file_to_first_lcg_key);
     std::vector<bool> string_bits = Utils::string_to_bits(encrypted_msg);
     std::vector<bool> decrypted = gamma;
 

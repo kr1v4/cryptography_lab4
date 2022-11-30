@@ -101,3 +101,41 @@ std::string kGen::Utils::bits_to_string(const std::vector<bool>& bits)
 	}
 	return str;
 }
+
+bool kGen::Utils::read_file_to_string(cr_string path_to_file, std::string& file_data)
+{
+	std::ifstream file(path_to_file, std::ios::in | std::ifstream::binary);
+
+	if (file.is_open())
+	{
+		file.seekg(0, std::ios::end);
+		file_data.reserve(static_cast<unsigned int>(file.tellg()));
+		file.seekg(0, std::ios::beg);
+
+		file_data.assign((std::istreambuf_iterator<char>(file)),
+			(std::istreambuf_iterator<char>()));
+
+		file.close();
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool kGen::Utils::write_string_to_file(cr_string path_to_file, cr_string str)
+{
+	std::ofstream file(path_to_file, std::ios::out | std::ofstream::binary);
+	if (file.is_open())
+	{
+		std::copy(str.begin(), str.end(), std::ostreambuf_iterator<char>(file));
+		file.flush();
+		file.close();
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
