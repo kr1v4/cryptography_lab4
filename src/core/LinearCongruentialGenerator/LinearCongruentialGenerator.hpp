@@ -1,5 +1,6 @@
 #ifndef LINEAR_CONGRUENTIAL_GENERATOR_HPP
 #define LINEAR_CONGRUENTIAL_GENERATOR_HPP
+
 #include "../Utils/Utils.hpp"
 #include <bitset>
 
@@ -13,7 +14,7 @@ namespace kGen
 
 			friend Generator;
 
-		public:
+		private:
 
 			ullong_t	get_increment();
 			ullong_t	get_multiplier();

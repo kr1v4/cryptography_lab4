@@ -13,7 +13,7 @@ namespace kGen
 
 			friend Generator;
 
-		public:
+		private:
 
 			std::bitset<17> get_register();
 			std::bitset<16> get_relations();
@@ -41,7 +41,7 @@ namespace kGen
 		private:
 
 			std::bitset<17> _register = std::bitset<17>("00000000000000000");
-			std::bitset<16> _relations = std::bitset<16>("0000000000000000");
+			std::bitset<16> _relations = std::bitset<16>("1100000000000000");
 
 		private:
 			int xor_by_relations();

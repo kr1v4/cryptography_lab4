@@ -98,26 +98,12 @@ void Application::start()
 
 	kGen::Utils::write_string_to_file(result_path, decrypted_msg);
 
-    /*std::string msg_to_encrypt = "My little test string to get gamma";
-
-    auto& cryptographer = kGen::Cryptographer::get_instanse();
-
-    std::string encrypted_msg = cryptographer.encrypt(msg_to_encrypt, "lcg_key.txt");
-
-    std::string decrypted_msg = cryptographer.decrypt(encrypted_msg, "lcg_key.txt");
-
-
-
-    std::cout << msg_to_encrypt <<"." <<"\n";
-    std::cout << encrypted_msg << "." << "\n";
-    std::cout << decrypted_msg << "." << "\n";*/
-
 }
 
 void Application::show_me()
 {
-    std::string nickname =
-        R"(
+	std::string nickname = "";
+       /* R"(
        			 __                   __                  _                       
        			/\ \                 /\ \               /' \                      
        			\ \ \____   __  __   \ \ \/'\    _ __  /\_, \   __  __     __     
@@ -127,6 +113,6 @@ void Application::show_me()
        			    \/___/   `/___/> \   \/_/\/_/ \/_/      \/_/ \/__/   \/__/\/_/
        			                /\___/                                            
        			                \/__/                                             		 
-    )";
+    )";*/
     std::cout << nickname << "\n";
 }
